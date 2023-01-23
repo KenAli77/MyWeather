@@ -30,6 +30,8 @@ export class HomeComponent  {
 
     if(this.query){
 
+      console.log(this.query)
+
       this.weatherService.getWeather(this.query).subscribe((response) => (
         this.router.navigate(["/weather-data"])
       ))

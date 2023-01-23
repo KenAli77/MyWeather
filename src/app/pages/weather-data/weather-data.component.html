@@ -1,1 +1,23 @@
-<p>weather-data works!</p>
+<div class="center">
+    <h1>Today's forecast for {{city}}</h1>
+    <div class="horizontal">
+        <img src="{{iconUrl}}" alt="">
+        <h3>{{weather.main.feels_like}}°C</h3>
+    </div>
+    <h3>{{weather.weather[0].description}}</h3>
+
+    <div class="grid-container grid">
+        <h4 class="grid-item icon">High/Low</h4>
+        <div class="grid-item text">{{weather.main.temp_min}}/{{weather.main.temp_max}}</div>
+      </div>
+      <div class="grid-container">
+        <h4 class="grid-item icon">Wind</h4>
+        <div class="grid-item text">{{weather.wind.speed}}kmh</div>
+      </div>
+      <div class="grid-container">
+        <h4 class="grid-item icon">Humidity</h4>
+        <div class="grid-item text">{{weather.main.humidity}}</div>
+      </div>
+    
+
+</div>

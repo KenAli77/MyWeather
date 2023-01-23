@@ -1,0 +1,25 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+    "icon text"
+    "icon text";
+  grid-gap: 1em;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.grid{
+    margin-top: 2%;
+}
+
+.grid-item.icon {
+  grid-area: icon;
+  text-align: start;
+}
+
+.grid-item.text {
+  grid-area: text;
+  text-align: end;
+}

@@ -15,6 +15,7 @@ export class WeatherService {
 
 apiKey = environment.apiKey
 units = "metric"
+weather:Weather;
 
 apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="
 
@@ -25,8 +26,17 @@ apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="
 
    const url = this.apiUrl+query+"&units="+this.units+"&appid="+this.apiKey
 
+   console.log(url);
 
-   return this.http.get<Weather>(url);
+   let request = this.http.get<Weather>(url);
+
+   request.subscribe((response)=>(
+    this.weather = response
+   ));
+
+   return request
+
+  
 
 
   }
