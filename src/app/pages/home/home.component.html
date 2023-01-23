@@ -1,5 +1,8 @@
+<router-outlet></router-outlet>
+
 <div class="center">
     <h1>{{title}}</h1>
     <app-input-field [name]= "'query'" [placeHolder]="'Enter your city...'" [type]="'text'" (valueChange)="onValueChange($event)"></app-input-field>
     <app-button [text]="'submit'" (btnClick)="fetchWeatherData()"></app-button>
 </div>
+

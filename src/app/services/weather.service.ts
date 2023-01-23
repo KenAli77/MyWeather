@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Weather } from '../WeatherData';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 
 
@@ -20,14 +21,12 @@ apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="
   constructor(private http:HttpClient) { }
 
 
-  getWeather(query:string){
+  getWeather(query:string):Observable<Weather>{
 
    const url = this.apiUrl+query+"&units="+this.units+"&appid="+this.apiKey
 
 
-   this.http.get<Weather>(url).subscribe((response)=>(
-    console.log(response.main)
-   ));
+   return this.http.get<Weather>(url);
 
 
   }
